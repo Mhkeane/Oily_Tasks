@@ -1,6 +1,7 @@
+import org.junit.runner.RunWith
+import org.junit.runners.Parameterized
 import kotlin.test.assertEquals
 import org.junit.Test as test
-/**import org.junit.Assert*/
 
 fun taskOne(max: Int): Int{
     var sum: Int = 0
@@ -20,24 +21,24 @@ fun taskOne(max: Int): Int{
 
 }
 
-class taskOneTests(){
-    @test fun sumUpTo4is3(){
-        val testInput = taskOne(4)
-        val testOutput = 3
+@RunWith(Parameterized::class)
+class taskOneTests(val X:Int, val Y:Int){
 
-        assertEquals(testOutput, testInput)
+    companion object {
+        @JvmStatic
+        @Parameterized.Parameters
+        fun data() : List<Array<Int>> {
+            return listOf(
+                    arrayOf(4, 3),
+                    arrayOf(6, 8),
+                    arrayOf(10, 23)
+            )
+        }
     }
 
-    @test fun sumUpTo6is8() {
-        val testInput = taskOne(6)
-        val testOutput = 8
-
-        assertEquals(testOutput, testInput)
-    }
-
-    @test fun sumUpTo10is23() {
-        val testInput = taskOne(10)
-        val testOutput = 23
+    @test fun sumUpToXisY(){
+        val testInput = taskOne(X)
+        val testOutput = Y
 
         assertEquals(testOutput, testInput)
     }
