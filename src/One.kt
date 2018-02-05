@@ -32,7 +32,8 @@ class taskOneTests(val X:Int, val Y:Int){
                     arrayOf(4, 3),
                     arrayOf(6, 8),
                     arrayOf(10, 23),
-                    arrayOf(16, 60)
+                    arrayOf(16, 60),
+                    arrayOf(1000, 233168)
             )
         }
     }
