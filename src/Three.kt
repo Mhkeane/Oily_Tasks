@@ -8,7 +8,7 @@ fun taskThree(number: Int): Int{
     Returns the largest prime factor of number
      */
     if (number > 2){
-        return 2
+        return number/2
     } else {
         return number
     }
@@ -24,7 +24,8 @@ class taskThreeTests(val X:Int, val Y:Int){
             return listOf(
                     arrayOf(1, 1),
                     arrayOf(2, 2),
-                    arrayOf(4, 2)
+                    arrayOf(4, 2),
+                    arrayOf(6, 3)
 
             )
         }
