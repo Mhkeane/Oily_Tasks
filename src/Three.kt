@@ -3,7 +3,7 @@ import org.junit.runners.Parameterized
 import kotlin.test.assertEquals
 import org.junit.Test as test
 
-fun taskThree(number: Int): Int{
+fun taskThree(number: Long): Long{
     /**
     Returns the largest prime factor of number
      */
@@ -11,9 +11,9 @@ fun taskThree(number: Int): Int{
         return number
     } else {
 
-        var factorCandidate = number - 1
-        while (factorCandidate > 1) {
-            if (number%factorCandidate == 0){
+        var factorCandidate = number - 1L
+        while (factorCandidate > 1L) {
+            if (number%factorCandidate == 0L){
                 return factorCandidate
             }
             factorCandidate--
@@ -24,18 +24,18 @@ fun taskThree(number: Int): Int{
 }
 
 @RunWith(Parameterized::class)
-class taskThreeTests(val X:Int, val Y:Int){
+class taskThreeTests(val X:Long, val Y:Long){
 
     companion object {
         @JvmStatic
         @Parameterized.Parameters
-        fun data() : List<Array<Int>> {
+        fun data() : List<Array<Long>> {
             return listOf(
-                    arrayOf(1, 1),
-                    arrayOf(2, 2),
-                    arrayOf(4, 2),
-                    arrayOf(6, 3),
-                    arrayOf(9, 3)
+                    arrayOf(1L, 1L),
+                    arrayOf(2L, 2L),
+                    arrayOf(4L, 2L),
+                    arrayOf(6L, 3L),
+                    arrayOf(9L, 3L)
 
             )
         }
