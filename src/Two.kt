@@ -26,7 +26,12 @@ fun Fibonacci(number: Int): Int {
     if (number < 2){
         return FibonacciNumbers[number]
     } else {
-        return Fibonacci(number - 1) + Fibonacci(number - 2)
+        var i: Int = 2
+        while (i <= number){
+            FibonacciNumbers.add( FibonacciNumbers[i-1] + FibonacciNumbers[i-2])
+            i++
+        }
+        return FibonacciNumbers[number]
     }
 }
 
@@ -40,7 +45,8 @@ class taskTwoTests(val X:Int, val Y:Int){
             return listOf(
                     arrayOf(1, 0),
                     arrayOf(2, 2),
-                    arrayOf(8, 10)
+                    arrayOf(8, 10),
+                    arrayOf(4000000, 4613732)
             )
         }
     }
