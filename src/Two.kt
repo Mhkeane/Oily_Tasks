@@ -19,8 +19,7 @@ class taskTwoTests(val X:Int, val Y:Int){
         @Parameterized.Parameters
         fun data() : List<Array<Int>> {
             return listOf(
-                    arrayOf(1, 0),
-                    arrayOf(2, 2)
+                    arrayOf(1, 0)
             )
         }
     }
