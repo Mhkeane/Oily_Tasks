@@ -7,7 +7,7 @@ fun taskThree(number: Int): Int{
     /**
     Returns the largest prime factor of number
      */
-    return 1
+    return number
 
 }
 
@@ -19,7 +19,8 @@ class taskThreeTests(val X:Int, val Y:Int){
         @Parameterized.Parameters
         fun data() : List<Array<Int>> {
             return listOf(
-                    arrayOf(1, 1)
+                    arrayOf(1, 1),
+                    arrayOf(2, 2)
 
             )
         }
