@@ -17,6 +17,7 @@ fun taskThree(number: Long): Long{
         while (factorCandidate < currentMaybePrime) {
             if (currentMaybePrime%factorCandidate == 0L) {
                 currentMaybePrime /= factorCandidate
+                factorCandidate = 1L
             }
             factorCandidate++
         }
@@ -51,7 +52,8 @@ class taskThreeTests(val X:Long, val Y:Long){
                     arrayOf(2L, 2L),
                     arrayOf(4L, 2L),
                     arrayOf(6L, 3L),
-                    arrayOf(9L, 3L)
+                    arrayOf(9L, 3L),
+                    arrayOf(12L, 3L)
 
             )
         }
