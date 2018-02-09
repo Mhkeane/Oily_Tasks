@@ -8,16 +8,25 @@ fun taskFour(numDigits: Int): Int{
     Returns the largest palindrome that is made from the product of two integers of length numDigits
      */
     val largestInteger = (Math.pow(10.0,numDigits.toDouble())).toInt() - 1
-    var possiblePalindromes: MutableList<Int> = mutableListOf()
-    for (i in (1..largestInteger)){
-        for (j in (1..largestInteger)){
-            if (isPalindrome(i*j)){
-                possiblePalindromes.add(i*j)
+    val smallestInteger= (Math.pow(10.0,(numDigits-1).toDouble())).toInt()
+    var largestPalindromeFound: Int = 0
+    var i = largestInteger
+    var j = largestInteger
+    while (i >= smallestInteger){
+        while (j >= i){
+            if (i*j <= largestPalindromeFound){
+                break
             }
+            if (isPalindrome(i*j)){
+                largestPalindromeFound = i*j
+            }
+            j--
         }
+        i--
+        j = largestInteger
     }
 
-    return possiblePalindromes.max()!!
+    return largestPalindromeFound
 
 }
 
