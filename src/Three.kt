@@ -12,14 +12,15 @@ fun taskThree(number: Long): Long{
         return number
     } else {
 
-        var factorCandidate = number - 1L
-        while (factorCandidate > 1L) {
-            if (number%factorCandidate == 0L){
-                return factorCandidate
+        var factorCandidate = 2L
+        var currentMaybePrime = number
+        while (factorCandidate < currentMaybePrime) {
+            if (currentMaybePrime%factorCandidate == 0L) {
+                currentMaybePrime /= factorCandidate
             }
-            factorCandidate--
+            factorCandidate++
         }
-        return number
+        return currentMaybePrime
     }
 
 }
