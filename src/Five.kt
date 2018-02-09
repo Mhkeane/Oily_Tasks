@@ -5,9 +5,13 @@ import org.junit.Test as test
 
 fun taskFive(max: Int): Int{
     /**
-    Returns the sum of all natural numbers below max that are multiples of 3 or 5
+    Returns the smallest positive number that has factors one through to max
      */
-    return max
+    var sum = 1
+    for (i in 2..max){
+        sum*=i
+    }
+    return sum
 
 }
 
@@ -20,7 +24,8 @@ class taskFiveTests(val X:Int, val Y:Int){
         fun data() : List<Array<Int>> {
             return listOf(
                     arrayOf(1, 1),
-                    arrayOf(2, 2)
+                    arrayOf(2, 2),
+                    arrayOf(3, 6)
             )
         }
     }
