@@ -7,7 +7,7 @@ fun taskFive(max: Int): Int{
     /**
     Returns the sum of all natural numbers below max that are multiples of 3 or 5
      */
-    return 1
+    return max
 
 }
 
@@ -19,7 +19,8 @@ class taskFiveTests(val X:Int, val Y:Int){
         @Parameterized.Parameters
         fun data() : List<Array<Int>> {
             return listOf(
-                    arrayOf(1, 1)
+                    arrayOf(1, 1),
+                    arrayOf(2, 2)
             )
         }
     }
