@@ -72,20 +72,14 @@ class primeListTests(val X:Long, val Y:Long){
         @Parameterized.Parameters
         fun data() : List<Array<Long>> {
             return listOf(
-                    arrayOf(1L, 1L),
-
-                    arrayOf(2L, 1L),
                     arrayOf(2L, 2L),
 
-                    arrayOf(3L, 1L),
                     arrayOf(3L, 2L),
                     arrayOf(3L, 3L),
 
-                    arrayOf(4L, 1L),
                     arrayOf(4L, 2L),
                     arrayOf(4L, 3L),
 
-                    arrayOf(5L, 1L),
                     arrayOf(5L, 2L),
                     arrayOf(5L, 3L),
                     arrayOf(5L, 5L)
