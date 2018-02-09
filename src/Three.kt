@@ -1,5 +1,6 @@
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
+import kotlin.math.sqrt
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 import org.junit.Test as test
@@ -14,7 +15,7 @@ fun taskThree(number: Long): Long{
 
         var factorCandidate = 2L
         var currentMaybePrime = number
-        while (factorCandidate < currentMaybePrime) {
+        while (factorCandidate < (sqrt(currentMaybePrime.toDouble())+1).toLong() ){
             if (currentMaybePrime%factorCandidate == 0L) {
                 currentMaybePrime /= factorCandidate
                 factorCandidate = 1L
@@ -39,7 +40,8 @@ class taskThreeTests(val X:Long, val Y:Long){
                     arrayOf(4L, 2L),
                     arrayOf(6L, 3L),
                     arrayOf(9L, 3L),
-                    arrayOf(12L, 3L)
+                    arrayOf(12L, 3L),
+                    arrayOf(600851475143L, 6857L)
 
             )
         }
