@@ -8,8 +8,10 @@ fun taskFive(max: Int): Int{
     Returns the smallest positive number that has factors one through to max
      */
     var sum = 1
-    for (i in 2..max){
-        sum*=i
+    for (i in max downTo 2){
+        if (sum%i != 0) {
+            sum *= i
+        }
     }
     return sum
 
@@ -25,7 +27,8 @@ class taskFiveTests(val X:Int, val Y:Int){
             return listOf(
                     arrayOf(1, 1),
                     arrayOf(2, 2),
-                    arrayOf(3, 6)
+                    arrayOf(3, 6),
+                    arrayOf(4, 12)
             )
         }
     }
