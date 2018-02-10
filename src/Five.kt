@@ -9,8 +9,14 @@ fun taskFive(max: Int): Int{
      */
     var sum = 1
     for (i in max downTo 2){
-        if (sum%i != 0) {
-            sum *= i
+        var possibleSum = sum
+        var j = 2
+        while (sum%i != 0) {
+            if((possibleSum*j)%i == 0) {
+                sum = possibleSum * j
+            }
+            j++
+
         }
     }
     return sum
@@ -28,7 +34,8 @@ class taskFiveTests(val X:Int, val Y:Int){
                     arrayOf(1, 1),
                     arrayOf(2, 2),
                     arrayOf(3, 6),
-                    arrayOf(4, 12)
+                    arrayOf(4, 12),
+                    arrayOf(10, 2520)
             )
         }
     }
