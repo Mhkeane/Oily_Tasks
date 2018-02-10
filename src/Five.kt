@@ -35,7 +35,8 @@ class taskFiveTests(val X:Int, val Y:Int){
                     arrayOf(2, 2),
                     arrayOf(3, 6),
                     arrayOf(4, 12),
-                    arrayOf(10, 2520)
+                    arrayOf(10, 2520),
+                    arrayOf(20, 232792560)
             )
         }
     }
